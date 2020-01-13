@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>testing</name>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2019-12-27 09:07:25</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[var recid = '8b377f07dbb14010e7b3cd3f2996199a';
+var jsonstr = new global.AttachmentApi().getFinalJson(recid);
+gs.info('fina jsonstr'+jsonstr);
+
+var accesstoken = '';
+
+try {
+    var r = new sn_ws.RESTMessageV2('x_58872_needit.SingleLogin', 'GetLoginToken');
+    var response = r.execute();
+    var responseBody = response.getBody();
+    var httpStatus = response.getStatusCode();
+    if (httpStatus == 200) {
+        gs.info('success');
+        var responseJson = JSON.parse(responseBody);
+        accesstoken = responseJson.access_token;
+        //gs.info('accesstoken' + accesstoken);
+        this.getSinglePDf(accesstoken);
+    } else {
+        gs.info('fail');
+    }
+} catch (ex) {
+    var message = ex.message;
+}
+
+function getSinglePDf(key) {
+    gs.info('keyy ' + key);
+	key = 'Bearer '+key;
+	gs.info('jsonstr body'+this.jsonstr);
+    try {
+        var r = new sn_ws.RESTMessageV2('x_58872_needit.SingleLogin', 'SinglePdfFormation');
+
+        r.setStringParameterNoEscape('body1', this.jsonstr );
+        r.setStringParameterNoEscape('key', key);
+
+        //override authentication profile 
+        //authentication type ='basic'/ 'oauth2'
+        //r.setAuthenticationProfile(authentication type, profile name);
+
+        //set a MID server name if one wants to run the message on MID
+        //r.setMIDServer('MY_MID_SERVER');
+
+        //if the message is configured to communicate through ECC queue, either
+        //by setting a MID server or calling executeAsync, one needs to set skip_sensor
+        //to true. Otherwise, one may get an intermittent error that the response body is null
+        //r.setEccParameter('skip_sensor', true);
+
+        var response = r.execute();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+        if (httpStatus == 200) {
+            var responseJson = JSON.parse(responseBody);
+            var pdfname = responseJson.pdfName;
+            gs.info('Pdf' + pdfname);
+        }else
+		{
+
+			gs.info('failed to genrate');
+		}
+    } catch (ex) {
+        var message = ex.message;
+    }
+
+
+
+}
+
+]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-12-27 09:07:37</sys_created_on>
+        <sys_id>1e2f2f5cdb864410e7b3cd3f299619d4</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>testing</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sysauto_script_1e2f2f5cdb864410e7b3cd3f299619d4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-12-27 11:53:05</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

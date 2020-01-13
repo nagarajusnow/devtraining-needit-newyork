@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>body1</name>
+        <rest_message_function display_value="SinglePdfFormation">17587790dbc64410e7b3cd3f29961952</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-12-27 10:31:19</sys_created_on>
+        <sys_id>13528cacdbc64410e7b3cd3f2996195f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>body1</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_13528cacdbc64410e7b3cd3f2996195f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-12-27 10:31:28</sys_updated_on>
+        <type>string</type>
+        <value>{
+objPdf:
+[
+	{
+        "docname": "1111.pdf",
+        "format": "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Ui9WaWV3ZXJQcmVmZXJlbmNlczw8L1ByaW50U2NhbGluZy9Ob25lPj4+PgplbmRvYmoKOCAwIG9iago8PC9Nb2REYXRlKEQ6MjAxOTEwMTQwMDM1MDYtMDcnMDAnKS9DcmVhdGlvbkRhdGUoRDoyMDE5MTAxNDAwMzUwNi0wNycwMCcpL1Byb2R1Y2VyKGlUZXh0riA1LjUuMiCpMjAwMC0yMDE0IGlUZXh0IEdyb3VwIE5WIFwoQUdQTC12ZXJzaW9uXCkpPj4KZW5kb2JqCnhyZWYKMCA5CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMTQ5OSAwMDAwMCBuIAowMDAwMDAxMzE4IDAwMDAwIG4gCjAwMDAwMDE0MTEgMDAwMDAgbiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAxNzE1IDAwMDAwIG4gCjAwMDAwMDExOTcgMDAwMDAgbiAKMDAwMDAwMTc2NiAwMDAwMCBuIAowMDAwMDAxODUxIDAwMDAwIG4gCnRyYWlsZXIKPDwvSW5mbyA4IDAgUi9JRCBbPDc4NWJjZWZmN2NjMjQ3MzZiMjYyMzg2ZjQ5MzQ0Y2I4Pjw3ODViY2VmZjdjYzI0NzM2YjI2MjM4NmY0OTM0NGNiOD5dL1Jvb3QgNyAwIFIvU2l6ZSA5Pj4KJWlUZXh0LTUuNS4yCnN0YXJ0eHJlZgoyMDA4CiUlRU9GCg=="
+        
+    },
+    {
+        "docname": "1.txt",
+        "format": "c2hmZHNmc2RmaA0KDQpkZmRmDQpkcw0KZg0Kc2RmDQoNCnNkZg0KZg0Kc2QNCmYNCnNk"
+        
+    }
+ 
+]
+}</value>
+    </sys_rest_message_fn_parameters>
+</record_update>
